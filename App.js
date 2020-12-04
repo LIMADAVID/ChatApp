@@ -7,14 +7,14 @@ import * as Font from 'expo-font';
 import Login from './src/screens/Login';
 import Chat from './src/screens/Chat';
 
-export default function App(){
+export default function App(props){
   const [userName, setUserName] = useState(null);
 
   return (
     <Container style={styles.container}>
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
         {!userName ? (
-          <Login />
+          <Login setUserName={setUserName}/>
         ) : (
           <Chat />
         )}
