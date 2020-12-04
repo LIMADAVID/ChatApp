@@ -1,26 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, SafeAreaView } from 'react-native';
+import { Container } from 'native-base';
+import { StatusBar } from 'expo-status-bar';
+import Constants from 'expo-constants'
 import * as Font from 'expo-font';
-import { Text, Button } from 'native-base';
+import Login from './src/screens/Login';
+import Chat from './src/screens/Chat';
 
 export default function App(){
+  const [userName, setUserName] = useState(null);
+
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <Button>
-        <Text>Clique aqui</Text>
-      </Button>
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <Container style={styles.container}>
+        <StatusBar style="auto" />
+        {!userName ? (
+          <Login />
+        ) : (
+          <Chat />
+        )}
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#16202b',
+    paddingTop: Constants.statusBarHeight
   },
 });
