@@ -28,7 +28,7 @@ export default function Login(props) {
         />
       </Item>
 
-      <Button style={styles.btnLogin} onPress={onSubmit}>
+      <Button style={styles.btnLogin} full={true} onPress={onSubmit}>
         <Text>Entrar</Text>
       </Button>
     </SafeAreaView>
