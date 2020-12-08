@@ -16,7 +16,7 @@ export default function App(props){
         {!userName ? (
           <Login setUserName={setUserName}/>
         ) : (
-          <Chat />
+          <Chat userName={userName}/>
         )}
     </Container>
   );
